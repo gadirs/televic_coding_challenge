@@ -11,17 +11,23 @@ python3 run.py
 
 ## Design Considerations
 
-### Question #1: Extra Security Headers or CORS for React Frontend
+### Question #1:
 
-If this Flask API needed extra security headers or cross-origin access from a React frontend, I would consider using **Flask-CORS**. Flask-CORS is a simple and widely used library that provides Cross-Origin Resource Sharing (CORS) support for Flask applications. This is important for situations where a React frontend hosted on a different domain needs to make requests to this Flask backend.
+If this Flask API needed extra security headers or cross-origin access from a React frontend, I would consider using **Flask-CORS**. This is important for situations where a React frontend hosted on a different domain needs to make requests to this Flask backend. It would allow us to restrict which domains can access the API, improving the overall security of the application.
 
-**Why Flask-CORS?**
-- **Security**: It allows you to restrict which domains can access your API, improving the overall security of the application.
-- **Ease of Use**: It’s simple to integrate and configure in a Flask app, offering customizable CORS options such as allowing specific HTTP methods and headers from trusted origins only.
-
-To use Flask-CORS, you would add it to your app like so:
+In order to use Flask-CORS, the following lines would be needed:
 ```python
 from flask_cors import CORS
 
 app = create_app()
 CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+```
+Only requests from http://localhost:3000 (React frontend) would be allowed to access the API.
+
+
+
+### Question #2:
+
+For a React UI with a strict Content Security Policy (CSP), Tailwind CSS is a good choice. It's a utility-first CSS framework, meaning it uses small, reusable classes to style elements directly in your HTML. This makes it easier to work with CSP because it doesn't rely on external scripts or stylesheets that might get blocked. On the other hand, Material UI and Chakra UI might need external resources like JavaScript or CSS files. This could be restricted under a strict CSP. Tailwind avoids this issue by letting you define all your styles in your own classes.
+
+
