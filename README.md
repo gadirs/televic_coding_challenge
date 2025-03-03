@@ -7,7 +7,7 @@ git clone https://github.com/your-username/televic_coding_challenge.git
 cd flask_prime_api
 pip3 install -r requirements.txt
 python3 run.py
-
+```
 
 ## Design Considerations
 
