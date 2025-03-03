@@ -8,7 +8,7 @@ cd flask_prime_api
 pip3 install -r requirements.txt
 python3 run.py
 ```
-After running the application, the API endpoint can be accessed at http://127.0.0.1:5000/prime/<n>, where <n> is the number for which you want to find the n-th prime. For example, http://127.0.0.1:5000/prime/10 will return the 10th prime number.
+After running the application, the API endpoint can be accessed at http://127.0.0.1:5000/prime/n, where n is the number for which you want to find the n-th prime. For example, http://127.0.0.1:5000/prime/10 will return the 10th prime number.
 
 ## Design Considerations
 
