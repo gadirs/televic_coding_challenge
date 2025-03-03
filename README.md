@@ -20,9 +20,9 @@ In order to use Flask-CORS, the following lines would be needed:
 from flask_cors import CORS
 
 app = create_app()
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5000"}})
 ```
-Only requests from http://localhost:3000 (React frontend) would be allowed to access the API.
+Only requests from http://127.0.0.1:5000 (React frontend) would be allowed to access the API.
 
 
 
