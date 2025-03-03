@@ -4,7 +4,7 @@ This API computes the N-th prime number.
 ## Installation and Running
 ```bash
 git clone https://github.com/your-username/televic_coding_challenge.git
-cd flask_prime_api
+cd televic_coding_challenge
 pip3 install -r requirements.txt
 python3 run.py
 ```
